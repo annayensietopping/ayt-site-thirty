@@ -1,0 +1,9 @@
+[build]
+  # No build command needed - site is pure HTML/CSS
+  command = "echo 'No build needed - static site'"
+  publish = "."
+
+[build.environment]
+  # Use Node 18 LTS for compatibility (even though we don't need it)
+  NODE_VERSION = "18"
+
