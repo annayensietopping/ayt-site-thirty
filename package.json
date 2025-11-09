@@ -1,0 +1,16 @@
+{
+  "name": "anna-topping-website",
+  "version": "1.0.0",
+  "description": "Personal website for Anna Topping",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "watch-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "Anna Topping",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
+

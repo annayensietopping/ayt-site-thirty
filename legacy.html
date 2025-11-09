@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy - Anna Topping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sixtyfour:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/output.css">
+    <style>
+        body {
+            font-family: 'Sixtyfour', monospace;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 1s ease-in-out;
+        }
+        
+        .header {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            display: inline-block;
+            transition: opacity 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .back-link:hover {
+            opacity: 0.7;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 10vw, 6rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            color: white;
+            margin: 0;
+            line-height: 1;
+            font-family: 'Sixtyfour', monospace;
+        }
+        
+        .legacy-container {
+            flex: 1;
+            width: 100%;
+            height: calc(100vh - 200px);
+            border: none;
+            overflow: auto;
+        }
+        
+        .legacy-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            .legacy-container {
+                height: calc(100vh - 150px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-link">← back</a>
+        <h1>LEGACY</h1>
+    </div>
+    
+    <div class="legacy-container">
+        <!-- Option 1: Iframe for live website -->
+        <!-- Replace the URL below with your existing website URL -->
+        <iframe src="https://your-legacy-website.com" class="legacy-iframe" title="Legacy Website"></iframe>
+        
+        <!-- Option 2: If you have local files, uncomment this and comment out the iframe above -->
+        <!-- Then copy your legacy website files into a 'legacy-site' folder -->
+        <!-- <iframe src="legacy-site/index.html" class="legacy-iframe" title="Legacy Website"></iframe> -->
+    </div>
+
+    <script>
+        // Array of colors to cycle through
+        const colors = [
+            'orange',
+            'emerald',
+            'tomato',
+            'blush',
+            'red',
+            'skyblue',
+            'burgundy',
+            'lightyellow',
+            'beige',
+            'limegreen',
+        ];
+        
+        // Start with a random color
+        let currentColorIndex = Math.floor(Math.random() * colors.length);
+        
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }
+        
+        // Change color immediately on load
+        changeBackgroundColor();
+        
+        // Change color every 15 seconds
+        setInterval(changeBackgroundColor, 15000);
+    </script>
+</body>
+</html>
+

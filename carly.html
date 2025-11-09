@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carly - Anna Topping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sixtyfour:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/output.css">
+    <style>
+        body {
+            font-family: 'Sixtyfour', monospace;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 1s ease-in-out;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: clamp(3rem, 15vw, 12rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            color: white;
+            margin: 0 0 3rem 0;
+            line-height: 1;
+            font-family: 'Sixtyfour', monospace;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            display: inline-block;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-link:hover {
+            opacity: 0.7;
+        }
+        
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        
+        .photo-item {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 1rem;
+                max-width: 100%;
+            }
+            
+            h1 {
+                margin: 0 0 2rem 0;
+                font-size: clamp(2.5rem, 20vw, 8rem);
+            }
+            
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 0.75rem;
+            }
+            
+            .container {
+                padding: 0.75rem;
+            }
+            
+            h1 {
+                margin: 0 0 1.5rem 0;
+                font-size: clamp(2rem, 18vw, 6rem);
+                letter-spacing: 0.03em;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← back</a>
+        <h1>CARLY</h1>
+        <div class="photo-gallery">
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x400/FFFFFF/999999?text=Carly+1" alt="Carly">
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x400/FFFFFF/999999?text=Carly+2" alt="Carly">
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x400/FFFFFF/999999?text=Carly+3" alt="Carly">
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x400/FFFFFF/999999?text=Carly+4" alt="Carly">
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x400/FFFFFF/999999?text=Carly+5" alt="Carly">
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x400/FFFFFF/999999?text=Carly+6" alt="Carly">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array of colors to cycle through
+        const colors = [
+            'orange',
+            'emerald',
+            'tomato',
+            'blush',
+            'red',
+            'skyblue',
+            'burgundy',
+            'lightyellow',
+            'beige',
+            'limegreen',
+        ];
+        
+        // Start with a random color
+        let currentColorIndex = Math.floor(Math.random() * colors.length);
+        
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }
+        
+        // Change color immediately on load
+        changeBackgroundColor();
+        
+        // Change color every 15 seconds
+        setInterval(changeBackgroundColor, 15000);
+    </script>
+</body>
+</html>
+
