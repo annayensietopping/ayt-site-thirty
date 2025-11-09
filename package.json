@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Personal website for Anna Topping",
   "scripts": {
-    "build": "echo 'No build needed - static HTML/CSS site'",
     "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
     "watch-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
