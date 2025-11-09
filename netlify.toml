@@ -1,7 +1,7 @@
 [build]
   # No build needed - this is a static HTML/CSS site
-  # Empty command tells Netlify to skip build
-  command = "true"
+  command = "echo 'No build needed - static site'"
+  # Publish from root directory where HTML files are
   publish = "."
 
 [build.environment]
