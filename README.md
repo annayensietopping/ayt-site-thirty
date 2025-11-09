@@ -2,6 +2,9 @@
 
 A modern, responsive personal website built with HTML and Tailwind CSS.
 
+## notes to self
+hosted in netlify
+
 ## Features
 
 - Clean, modern design with Tailwind CSS

@@ -7,8 +7,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sixtyfour:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dist/output.css">
     <style>
+        @keyframes colorCycle {
+            0% { background-color: orange; }
+            10% { background-color: emerald; }
+            20% { background-color: tomato; }
+            30% { background-color: blush; }
+            40% { background-color: red; }
+            50% { background-color: skyblue; }
+            60% { background-color: burgundy; }
+            70% { background-color: lightyellow; }
+            80% { background-color: beige; }
+            90% { background-color: limegreen; }
+            100% { background-color: orange; }
+        }
+        
         body {
             font-family: 'Sixtyfour', monospace;
             -webkit-font-smoothing: antialiased;
@@ -20,7 +33,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: background-color 1s ease-in-out;
+            animation: colorCycle 150s infinite;
         }
         
         .container {
@@ -154,36 +167,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Array of colors to cycle through
-        const colors = [
-            'orange',
-            'emerald',
-            'tomato',
-            'blush',
-            'red',
-            'skyblue',
-            'burgundy',
-            'lightyellow',
-            'beige',
-            'limegreen',
-        ];
-        
-        // Start with a random color
-        let currentColorIndex = Math.floor(Math.random() * colors.length);
-        
-        function changeBackgroundColor() {
-            document.body.style.backgroundColor = colors[currentColorIndex];
-            currentColorIndex = (currentColorIndex + 1) % colors.length;
-        }
-        
-        // Change color immediately on load
-        changeBackgroundColor();
-        
-        // Change color every 15 seconds
-        setInterval(changeBackgroundColor, 15000);
-    </script>
 </body>
 </html>
 
