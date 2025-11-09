@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Topping</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sixtyfour:wght@400&display=swap" rel="stylesheet">
@@ -28,21 +29,25 @@
             font-family: 'Sixtyfour', monospace;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            min-height: 100vh;
+            justify-content: center; /* centers content vertically if there's extra space */
             align-items: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
             animation: colorCycle 100s infinite;
         }
         
         .container {
-            width: 100%;
+            flex: 1; /* pushes footer down if there's space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             max-width: 800px;
             padding: 2rem;
-            text-align: center;
         }
         
         h1 {
@@ -69,7 +74,29 @@
             width: 100%;
             box-sizing: border-box;
         }
+
+        .text-box a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            transition: opacity 0.3s ease;
+            text-decoration-color: white;
+            text-decoration-thickness: 1px;
+        }
         
+        .text-box a:hover {
+            text-decoration: underline;
+            opacity: 0.7;
+        }
+
+        h2 {
+            font-style: italic;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
         .footer {
             max-width: 800px;
             width: 100%;
@@ -164,7 +191,8 @@
     <div class="container">
         <h1>ANNA</h1>
         <div class="text-box">
-            <p>I'm a Sales Engineer at Datadog. I live in Somerville, Massachusetts.</p>
+            <h2>sales engineer / seamstress / pet owner</h2>
+            <p>I'm a Sales Engineer at <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>. I live in Somerville, Massachusetts.</p>
         </div>
         <footer class="footer">
             <a href="mailto:itsannatopping@gmail.com">email</a>
